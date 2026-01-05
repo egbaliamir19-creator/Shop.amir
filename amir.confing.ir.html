@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کانفیگ پرو - فروش کانفیگ DNS و WireGuard | امیر اقبالی</title>
+    <meta name="description" content="فروش کانفیگ‌های حرفه‌ای DNS و WireGuard با پشتیبانی 24/7 - سازنده: امیر اقبالی">
+    <meta name="keywords" content="کانفیگ, DNS, WireGuard, VPN, شبکه, امنیت, امیر اقبالی">
+    <meta name="author" content="امیر اقبالی">
+    
+    <!-- فونت‌ها و آیکون‌ها -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --accent: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+        
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .logo p {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        nav a:hover {
+            color: var(--accent);
+        }
+        
+        .user-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .user-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .creator-info {
+            background: rgba(16, 185, 129, 0.1);
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+        
+        /* Products */
+        .section-title {
+            text-align: center;
+            margin: 3rem 0;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 4rem;
+        }
+        
+        .product-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .product-badge {
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .product-title {
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .product-description {
+            color: #94a3b8;
+            margin-bottom: 20px;
+            min-height: 80px;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .product-features li {
+            padding: 5px 0;
+            color: #cbd5e1;
+            position: relative;
+            padding-right: 25px;
+        }
+        
+        .product-features li:before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .product-price del {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-right: 10px;
+        }
+        
+        /* Cart */
+        .cart-page {
+            padding: 120px 0 60px;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            gap: 20px;
+        }
+        
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .quantity {
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        .remove-btn {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--danger);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .cart-summary {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .total {
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        
+        /* Login */
+        .login-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .login-card {
+            background: rgba(30, 41, 59, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 450px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .login-header h2 {
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #cbd5e1;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        /* Dashboard */
+        .dashboard {
+            padding: 120px 0 60px;
+        }
+        
+        .dashboard-header {
+            background: var(--gradient);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        /* Admin */
+        .admin-dashboard {
+            padding: 120px 0 60px;
+        }
+        
+        .admin-nav {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .admin-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .admin-nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .admin-nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            padding: 50px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        /* Notifications */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: none;
+        }
+        
+        .notification.show {
+            display: block;
+            animation: slideIn 0.3s;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Sections */
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        /* Cart Button */
+        .cart-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--gradient);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--danger);
+            color: white;
+            font-size: 0.8rem;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h1>کانفیگ <span>پرو</span></h1>
+                        <p>سازنده: امیر اقبالی</p>
+                    </div>
+                </div>
+                
+                <nav>
+                    <ul>
+                        <li><a href="#" class="nav-link" data-page="home"><i class="fas fa-home"></i> خانه</a></li>
+                        <li><a href="#" class="nav-link" data-page="products"><i class="fas fa-shopping-bag"></i> محصولات</a></li>
+                        <li><a href="#" class="nav-link" data-page="cart"><i class="fas fa-shopping-cart"></i> سبد خرید</a></li>
+                        <li><a href="#" class="nav-link" data-page="dashboard" id="dashboardLink" style="display:none;"><i class="fas fa-user"></i> پنل کاربری</a></li>
+                        <li><a href="#" class="nav-link" data-page="admin" id="adminLink" style="display:none;"><i class="fas fa-crown"></i> مدیریت</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="user-btn" id="loginBtn">
+                    <i class="fas fa-user"></i>
+                    <span id="userStatus">ورود / ثبت‌نام</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Cart Button -->
+    <div class="cart-btn" id="cartButton">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+    
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+    
+    <!-- Home Page -->
+    <section id="home-page" class="page active">
+        <div class="hero">
+            <div class="container">
+                <h2>کانفیگ حرفه‌ای DNS و WireGuard</h2>
+                <div class="creator-info">
+                    <p><i class="fas fa-user-tie"></i> سازنده: امیر اقبالی | پشتیبانی: ۰۹۹۳۴۰۸۶۳۴۰</p>
+                </div>
+                <p>فروش تخصصی کانفیگ‌های DNS و WireGuard با کیفیت عالی و پشتیبانی ۲۴ ساعته</p>
+                <p>با ثبت‌نام اولیه ۸۰۰,۰۰۰ تومان هدیه دریافت کنید!</p>
+                <a href="#" class="btn nav-link" data-page="products">مشاهده محصولات</a>
+            </div>
+        </div>
+        
+        <div class="container">
+            <h2 class="section-title">محصولات ویژه</h2>
+            <div class="products-grid" id="featured-products">
+                <!-- Products loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Products Page -->
+    <section id="products-page" class="page">
+        <div class="container">
+            <h2 class="section-title">همه محصولات</h2>
+            <div class="products-grid" id="all-products">
+                <!-- Products loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Cart Page -->
+    <section id="cart-page" class="page">
+        <div class="container">
+            <div class="cart-page">
+                <h2 class="section-title">سبد خرید</h2>
+                <div id="cart-items">
+                    <!-- Cart items loaded by JavaScript -->
+                </div>
+                <div class="cart-summary" id="cart-summary" style="display:none;">
+                    <div class="summary-row">
+                        <span>جمع کل:</span>
+                        <span id="subtotal">۰ تومان</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>تخفیف:</span>
+                        <span id="discount">۰ تومان</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>مبلغ قابل پرداخت:</span>
+                        <span id="total">۰ تومان</span>
+                    </div>
+                    <button class="btn" id="checkoutBtn" style="width:100%;margin-top:20px;">پرداخت با کیف پول</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Login Page -->
+    <section id="login-page" class="page">
+        <div class="login-page">
+            <div class="container">
+                <div class="login-card">
+                    <div class="login-header">
+                        <h2>ورود / ثبت‌نام</h2>
+                        <p>با ثبت‌نام ۸۰۰,۰۰۰ تومان هدیه دریافت کنید</p>
+                    </div>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="email">ایمیل</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">رمز عبور</label>
+                            <input type="password" id="password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn" style="width:100%">ورود</button>
+                    </form>
+                    <p style="text-align:center;margin-top:20px;color:#94a3b8;">حساب کاربری ندارید؟</p>
+                    <button class="btn" id="showRegister" style="width:100%;margin-top:10px;background:#64748b;">ثبت‌نام جدید</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Register Page -->
+    <section id="register-page" class="page">
+        <div class="login-page">
+            <div class="container">
+                <div class="login-card">
+                    <div class="login-header">
+                        <h2>ثبت‌نام جدید</h2>
+                        <p>۸۰۰,۰۰۰ تومان هدیه ثبت‌نام</p>
+                    </div>
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="reg-name">نام کامل</label>
+                            <input type="text" id="reg-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-email">ایمیل</label>
+                            <input type="email" id="reg-email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-phone">شماره تماس</label>
+                            <input type="tel" id="reg-phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-password">رمز عبور</label>
+                            <input type="password" id="reg-password" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-confirm">تکرار رمز عبور</label>
+                            <input type="password" id="reg-confirm" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn" style="width:100%">ثبت‌نام و دریافت هدیه</button>
+                    </form>
+                    <button class="btn" id="showLogin" style="width:100%;margin-top:20px;background:#64748b;">قبلاً ثبت‌نام کرده‌ام</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Dashboard Page -->
+    <section id="dashboard-page" class="page">
+        <div class="container">
+            <div class="dashboard">
+                <div class="dashboard-header">
+                    <h2 id="welcomeMessage">خوش آمدید!</h2>
+                    <p>موجودی کیف پول: <span id="walletBalance">۰ تومان</span></p>
+                </div>
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <h3 id="totalOrders">۰</h3>
+                        <p>تعداد سفارشات</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="totalSpent">۰</h3>
+                        <p>مجموع خریدها</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="activeConfigs">۰</h3>
+                        <p>کانفیگ‌های فعال</p>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:40px;">
+                    <button class="btn" onclick="logout()" style="background:var(--danger);">خروج از حساب</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Admin Page -->
+    <section id="admin-page" class="page">
+        <div class="container">
+            <div class="admin-dashboard">
+                <div class="admin-nav">
+                    <ul>
+                        <li><a href="#" class="active">پیشخوان</a></li>
+                        <li><a href="#">کاربران</a></li>
+                        <li><a href="#">سفارشات</a></li>
+                        <li><a href="#">محصولات</a></li>
+                    </ul>
+                </div>
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <h3 id="adminTotalUsers">۰</h3>
+                        <p>کاربران کل</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="adminTotalSales">۰</h3>
+                        <p>فروش کل</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="adminTodayOrders">۰</h3>
+                        <p>سفارشات امروز</p>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:40px;">
+                    <button class="btn" onclick="adminLogout()" style="background:var(--danger);">خروج از پنل مدیریت</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>کانفیگ پرو</h3>
+                    <p>فروش تخصصی کانفیگ‌های شبکه و امنیت</p>
+                    <p style="color:var(--accent);margin-top:10px;"><i class="fas fa-user-tie"></i> سازنده: امیر اقبالی</p>
+                </div>
+                <div class="footer-column">
+                    <h3>لینک‌های سریع</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="nav-link" data-page="home">خانه</a></li>
+                        <li><a href="#" class="nav-link" data-page="products">محصولات</a></li>
+                        <li><a href="#" class="nav-link" data-page="dashboard">پنل کاربری</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>تماس با ما</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> ۰۹۹۳۴۰۸۶۳۴۰</li>
+                        <li><i class="fas fa-envelope"></i> amir@configpro.ir</li>
+                        <li><i class="fas fa-map-marker-alt"></i> ایران</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© ۱۴۰۳ کانفیگ پرو - طراحی و توسعه توسط امیر اقبالی</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // State Management
+        let currentUser = JSON.parse(localStorage.getItem('configProUser')) || null;
+        let cart = JSON.parse(localStorage.getItem('configProCart')) || [];
+        let products = [
+            {
+                id: 1,
+                name: "کانفیگ DNS حرفه‌ای",
+                description: "کانفیگ کامل DNS با سرعت بالا و امنیت کامل - مناسب برای وب‌سایت‌ها و سرورها",
+                price: 120000,
+                originalPrice: 150000,
+                features: ["سرعت بالا", "امنیت کامل", "پشتیبانی 24/7", "راهنمای نصب"],
+                type: "dns",
+                badge: "پرفروش"
+            },
+            {
+                id: 2,
+                name: "کانفیگ WireGuard",
+                description: "کانفیگ VPN با پروتکل WireGuard - مناسب برای دور زدن فیلترینگ",
+                price: 80000,
+                originalPrice: 100000,
+                features: ["سرعت نامحدود", "امنیت بالا", "بدون لاگ", "پشتیبانی"],
+                type: "wireguard",
+                badge: "جدید"
+            },
+            {
+                id: 3,
+                name: "پکیج طلایی",
+                description: "پکیج کامل شامل DNS و WireGuard با پشتیبانی اختصاصی",
+                price: 180000,
+                originalPrice: 220000,
+                features: ["هر دو سرویس", "پشتیبانی VIP", "آپدیت رایگان", "ضمانت بازگشت"],
+                type: "package",
+                badge: "ویژه"
+            }
+        ];
+
+        // DOM Elements
+        const pages = document.querySelectorAll('.page');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const loginBtn = document.getElementById('loginBtn');
+        const userStatus = document.getElementById('userStatus');
+        const cartButton = document.getElementById('cartButton');
+        const cartCount = document.getElementById('cartCount');
+        const dashboardLink = document.getElementById('dashboardLink');
+        const adminLink = document.getElementById('adminLink');
+        const notification = document.getElementById('notification');
+
+        // Initialize
+        function init() {
+            updateCartCount();
+            updateUserStatus();
+            renderProducts();
+            
+            if (currentUser) {
+                if (currentUser.email === 'admin@configpro.ir') {
+                    adminLink.style.display = 'block';
+                }
+            }
+        }
+
+        // Show page
+        function showPage(pageId) {
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(`${pageId}-page`).classList.add('active');
+            
+            if (pageId === 'cart') {
+                updateCartPage();
+            } else if (pageId === 'dashboard' && currentUser) {
+                updateDashboard();
+            } else if (pageId === 'admin' && currentUser && currentUser.email === 'admin@configpro.ir') {
+                updateAdminPanel();
+            }
+        }
+
+        // Update cart count
+        function updateCartCount() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+
+        // Update user status
+        function updateUserStatus() {
+            if (currentUser) {
+                userStatus.textContent = currentUser.name;
+                dashboardLink.style.display = 'block';
+            } else {
+                userStatus.textContent = 'ورود / ثبت‌نام';
+                dashboardLink.style.display = 'none';
+                adminLink.style.display = 'none';
+            }
+        }
+
+        // Render products
+        function renderProducts() {
+            const featuredContainer = document.getElementById('featured-products');
+            const allContainer = document.getElementById('all-products');
+            
+            featuredContainer.innerHTML = '';
+            allContainer.innerHTML = '';
+            
+            products.forEach(product => {
+                const productCard = createProductCard(product);
+                allContainer.appendChild(productCard.cloneNode(true));
+                
+                if (product.badge === 'پرفروش' || product.badge === 'ویژه') {
+                    featuredContainer.appendChild(productCard);
+                }
+            });
+        }
+
+        // Create product card
+        function createProductCard(product) {
+            const div = document.createElement('div');
+            div.className = 'product-card';
+            
+            const isInCart = cart.some(item => item.id === product.id);
+            
+            div.innerHTML = `
+                ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                <h3 class="product-title">${product.name}</h3>
+                <p class="product-description">${product.description}</p>
+                <ul class="product-features">
+                    ${product.features.map(f => `<li>${f}</li>`).join('')}
+                </ul>
+                <div class="product-price">
+                    ${product.price.toLocaleString()} تومان
+                    ${product.originalPrice ? `<del>${product.originalPrice.toLocaleString()}</del>` : ''}
+                </div>
+                <button class="btn ${isInCart ? '' : 'btn-primary'}" data-id="${product.id}" 
+                        style="width:100%;${isInCart ? 'background:#10b981' : ''}">
+                    ${isInCart ? 'اضافه شده' : 'افزودن به سبد خرید'}
+                </button>
+            `;
+            
+            return div;
+        }
+
+        // Update cart page
+        function updateCartPage() {
+            const container = document.getElementById('cart-items');
+            const summary = document.getElementById('cart-summary');
+            
+            container.innerHTML = '';
+            
+            if (cart.length === 0) {
+                container.innerHTML = '<p style="text-align:center;color:#94a3b8;">سبد خرید شما خالی است</p>';
+                summary.style.display = 'none';
+                return;
+            }
+            
+            let subtotal = 0;
+            
+            cart.forEach(item => {
+                const product = products.find(p => p.id === item.id);
+                if (product) {
+                    const itemTotal = product.price * item.quantity;
+                    subtotal += itemTotal;
+                    
+                    const div = document.createElement('div');
+                    div.className = 'cart-item';
+                    div.innerHTML = `
+                        <div class="cart-item-image">
+                            <i class="fas ${product.type === 'dns' ? 'fa-server' : 'fa-shield-alt'}"></i>
+                        </div>
+                        <div class="cart-item-details">
+                            <h3 class="cart-item-title">${product.name}</h3>
+                            <div class="cart-item-price">${product.price.toLocaleString()} تومان</div>
+                        </div>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" onclick="updateQuantity(${product.id}, -1)">-</button>
+                            <span class="quantity">${item.quantity}</span>
+                            <button class="quantity-btn" onclick="updateQuantity(${product.id}, 1)">+</button>
+                        </div>
+                        <button class="remove-btn" onclick="removeFromCart(${product.id})">حذف</button>
+                    `;
+                    container.appendChild(div);
+                }
+            });
+            
+            const discount = Math.floor(subtotal * 0.1);
+            const total = subtotal - discount;
+            
+            document.getElementById('subtotal').textContent = subtotal.toLocaleString() + ' تومان';
+            document.getElementById('discount').textContent = discount.toLocaleString() + ' تومان';
+            document.getElementById('total').textContent = total.toLocaleString() + ' تومان';
+            summary.style.display = 'block';
+        }
+
+        // Add to cart
+        function addToCart(productId) {
+            const existing = cart.find(item => item.id === productId);
+            
+            if (existing) {
+                existing.quantity++;
+            } else {
+                cart.push({
+                    id: productId,
+                    quantity: 1
+                });
+            }
+            
+            localStorage.setItem('configProCart', JSON.stringify(cart));
+            updateCartCount();
+            renderProducts();
+            showNotification('محصول به سبد خرید اضافه شد');
+        }
+
+        // Remove from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            localStorage.setItem('configProCart', JSON.stringify(cart));
+            updateCartCount();
+            renderProducts();
+            updateCartPage();
+            showNotification('محصول از سبد خرید حذف شد');
+        }
+
+        // Update quantity
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            
+            if (item) {
+                item.quantity += change;
+                
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                    return;
+                }
+                
+                localStorage.setItem('configProCart', JSON.stringify(cart));
+                updateCartCount();
+                updateCartPage();
+            }
+        }
+
+        // Show notification
+        function showNotification(message) {
+            notification.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // Checkout function
+        function checkout() {
+            if (!currentUser) {
+                showNotification('لطفاً ابتدا وارد حساب کاربری خود شوید');
+                showPage('login');
+                return;
+            }
+            
+            let subtotal = 0;
+            cart.forEach(item => {
+                const product = products.find(p => p.id === item.id);
+                if (product) subtotal += product.price * item.quantity;
+            });
+            
+            const discount = Math.floor(subtotal * 0.1);
+            const total = subtotal - discount;
+            
+            if (currentUser.wallet < total) {
+                showNotification('موجودی کیف پول شما کافی نیست');
+                return;
+            }
+            
+            // Deduct from wallet
+            currentUser.wallet -= total;
+            localStorage.setItem('configProUser', JSON.stringify(currentUser));
+            
+            // Create order
+            const order = {
+                id: Date.now(),
+                date: new Date().toISOString(),
+                items: [...cart],
+                total: total,
+                status: 'completed'
+            };
+            
+            currentUser.orders = currentUser.orders || [];
+            currentUser.orders.push(order);
+            localStorage.setItem('configProUser', JSON.stringify(currentUser));
+            
+            // Generate and download config files
+            generateConfigFiles();
+            
+            // Clear cart
+            cart = [];
+            localStorage.setItem('configProCart', JSON.stringify(cart));
+            
+            // Update UI
+            updateCartCount();
+            updateCartPage();
+            updateUserStatus();
+            
+            showNotification(`خرید با موفقیت انجام شد! ${total.toLocaleString()} تومان از کیف پول شما کسر شد.`);
+        }
+
+        // Generate config files
+        function generateConfigFiles() {
+            cart.forEach(item => {
+                const product = products.find(p => p.id === item.id);
+                if (!product) return;
+                
+                let configContent = '';
+                let fileName = '';
+                
+                if (product.type === 'dns') {
+                    fileName = `dns-config-${Date.now()}.conf`;
+                    configContent = `# DNS Configuration - ConfigPro
+# Generated for: ${currentUser.name}
+# Date: ${new Date().toLocaleDateString('fa-IR')}
+# Contact: 09934086340
+# Creator: امیر اقبالی
+
+nameserver 1.1.1.1
+nameserver 8.8.8.8
+nameserver 9.9.9.9
+
+# DNS over TLS
+tls-hostname dns.google
+tls-hostname dns.cloudflare.com
+
+# DNSSEC validation
+trust-anchor ".,20326,8,2,E06D44B80B8F1D39A95C0B0D7C65D08458E880409BBC683457104237C7F8EC8D"
+
+# Cache settings
+cache-size 10000
+prefetch
+prefetch-key
+
+# این فایل را در مسیر /etc/resolv.conf کپی کنید
+# یا از دستور زیر استفاده کنید:
+# sudo cp dns-config.conf /etc/resolv.conf
+
+# پشتیبانی: 09934086340
+# ایمیل: amir@configpro.ir`;
+                } else if (product.type === 'wireguard') {
+                    fileName = `wireguard-config-${Date.now()}.conf`;
+                    configContent = `# WireGuard Configuration - ConfigPro
+# Generated for: ${currentUser.name}
+# Date: ${new Date().toLocaleDateString('fa-IR')}
+# Contact: 09934086340
+# Creator: امیر اقبالی
+
+[Interface]
+PrivateKey = ${generateRandomKey()}
+Address = 10.0.0.2/24
+DNS = 1.1.1.1, 8.8.8.8
+MTU = 1420
+
+[Peer]
+PublicKey = ${generateRandomKey()}
+Endpoint = wg.configpro.ir:51820
+AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 25
+
+# برای نصب:
+# 1. نرم‌افزار WireGuard را نصب کنید
+# 2. این فایل را Import کنید
+# 3. Tunnel را فعال کنید
+# 4. از اینترنت امن لذت ببرید
+
+# نکات:
+# - این کانفیگ برای 30 روز معتبر است
+# - سرعت نامحدود
+# - بدون لاگ‌گیری
+
+# پشتیبانی: 09934086340
+# ایمیل: amir@configpro.ir`;
+                } else {
+                    fileName = `config-${Date.now()}.conf`;
+                    configContent = `# Configuration - ConfigPro
+# Product: ${product.name}
+# User: ${currentUser.name}
+# Date: ${new Date().toLocaleDateString('fa-IR')}
+# Contact: 09934086340
+# Creator: امیر اقبالی
+
+# This is your configuration file for ${product.name}
+# Please follow the instructions provided in the documentation.
+
+# راهنمای نصب:
+# 1. این فایل را در محل مناسب کپی کنید
+# 2. تنظیمات را اعمال کنید
+# 3. سرویس را راه‌اندازی کنید
+
+# برای پشتیبانی با شماره 09934086340 تماس بگیرید
+# یا به ایمیل amir@configpro.ir پیام دهید`;
+                }
+                
+                // Create download link
+                const blob = new Blob([configContent], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+        }
+
+        // Generate random key for WireGuard
+        function generateRandomKey() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+            let key = '';
+            for (let i = 0; i < 44; i++) {
+                key += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return key;
+        }
+
+        // Update dashboard
+        function updateDashboard() {
+            if (!currentUser) return;
+            
+            document.getElementById('welcomeMessage').textContent = `خوش آمدید ${currentUser.name}`;
+            document.getElementById('walletBalance').textContent = currentUser.wallet.toLocaleString() + ' تومان';
+            document.getElementById('totalOrders').textContent = (currentUser.orders || []).length;
+            
+            const totalSpent = (currentUser.orders || []).reduce((sum, order) => sum + order.total, 0);
+            document.getElementById('totalSpent').textContent = totalSpent.toLocaleString() + ' تومان';
+            document.getElementById('activeConfigs').textContent = (currentUser.orders || []).length;
+        }
+
+        // Update admin panel
+        function updateAdminPanel() {
+            // Get all users
+            const users = JSON.parse(localStorage.getItem('configProUsers')) || [];
+            const allOrders = users.reduce((orders, user) => {
+                return orders.concat(user.orders || []);
+            }, []);
+            
+            const totalSales = allOrders.reduce((sum, order) => sum + order.total, 0);
+            const today = new Date().toDateString();
+            const todayOrders = allOrders.filter(order => new Date(order.date).toDateString() === today);
+            
+            document.getElementById('adminTotalUsers').textContent = users.length;
+            document.getElementById('adminTotalSales').textContent = totalSales.toLocaleString();
+            document.getElementById('adminTodayOrders').textContent = todayOrders.length;
+        }
+
+        // Login function
+        function login(email, password) {
+            // Check if user exists
+            const users = JSON.parse(localStorage.getItem('configProUsers')) || [];
+            let user = users.find(u => u.email === email && u.password === password);
+            
+            if (user) {
+                currentUser = user;
+                localStorage.setItem('configProUser', JSON.stringify(currentUser));
+                
+                if (email === 'admin@configpro.ir') {
+                    adminLink.style.display = 'block';
+                }
+                
+                updateUserStatus();
+                showPage('dashboard');
+                showNotification('ورود موفقیت‌آمیز بود');
+                return true;
+            }
+            
+            return false;
+        }
+
+        // Register function
+        function register(name, email, phone, password) {
+            const users = JSON.parse(localStorage.getItem('configProUsers')) || [];
+            
+            // Check if user already exists
+            if (users.some(u => u.email === email)) {
+                showNotification('این ایمیل قبلاً ثبت‌نام کرده است');
+                return false;
+            }
+            
+            // Create new user with 800,000 bonus
+            const newUser = {
+                id: Date.now(),
+                name,
+                email,
+                phone,
+                password,
+                wallet: 800000, // 800,000 تومان هدیه
+                orders: [],
+                registered: new Date().toISOString()
+            };
+            
+            users.push(newUser);
+            localStorage.setItem('configProUsers', JSON.stringify(users));
+            
+            currentUser = newUser;
+            localStorage.setItem('configProUser', JSON.stringify(currentUser));
+            
+            updateUserStatus();
+            showPage('dashboard');
+            showNotification('ثبت‌نام موفقیت‌آمیز بود! ۸۰۰,۰۰۰ تومان هدیه به کیف پول شما اضافه شد.');
+            
+            return true;
+        }
+
+        // Logout function
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('configProUser');
+            updateUserStatus();
+            showPage('home');
+            showNotification('با موفقیت از حساب کاربری خارج شدید');
+        }
+
+        // Admin logout
+        function adminLogout() {
+            currentUser = null;
+            localStorage.removeItem('configProUser');
+            updateUserStatus();
+            showPage('home');
+            showNotification('با موفقیت از پنل مدیریت خارج شدید');
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', init);
+
+        // Navigation
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = link.getAttribute('data-page');
+                showPage(page);
+            });
+        });
+
+        // Cart button
+        cartButton.addEventListener('click', () => {
+            showPage('cart');
+        });
+
+        // Login button
+        loginBtn.addEventListener('click', () => {
+            if (currentUser) {
+                showPage('dashboard');
+            } else {
+                showPage('login');
+            }
+        });
+
+        // Product click (event delegation)
+        document.addEventListener('click', (e) => {
+            // Add to cart
+            if (e.target.closest('[data-id]')) {
+                const productId = parseInt(e.target.getAttribute('data-id'));
+                if (!e.target.closest('[data-id]').disabled) {
+                    addToCart(productId);
+                }
+            }
+            
+            // Checkout
+            if (e.target.id === 'checkoutBtn') {
+                checkout();
+            }
+            
+            // Show register
+            if (e.target.id === 'showRegister') {
+                e.preventDefault();
+                showPage('register');
+            }
+            
+            // Show login
+            if (e.target.id === 'showLogin') {
+                e.preventDefault();
+                showPage('login');
+            }
+        });
+
+        // Login form
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (login(email, password)) {
+                document.getElementById('loginForm').reset();
+            } else {
+                showNotification('ایمیل یا رمز عبور اشتباه است');
+            }
+        });
+
+        // Register form
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('reg-name').value;
+            const email = document.getElementById('reg-email').value;
+            const phone = document.getElementById('reg-phone').value;
+            const password = document.getElementById('reg-password').value;
+            const confirm = document.getElementById('reg-confirm').value;
+            
+            if (password !== confirm) {
+                showNotification('رمز عبور و تکرار آن مطابقت ندارند');
+                return;
+            }
+            
+            if (password.length < 6) {
+                showNotification('رمز عبور باید حداقل ۶ کاراکتر باشد');
+                return;
+            }
+            
+            if (register(name, email, phone, password)) {
+                document.getElementById('registerForm').reset();
+            }
+        });
+
+        // Initialize admin user if not exists
+        if (!localStorage.getItem('configProUsers')) {
+            const adminUser = {
+                id: 1,
+                name: "امیر اقبالی",
+                email: "admin@configpro.ir",
+                phone: "09934086340",
+                password: "Admin123!",
+                wallet: 1000000,
+                orders: [],
+                registered: new Date().toISOString(),
+                isAdmin: true
+            };
+            
+            localStorage.setItem('configProUsers', JSON.stringify([adminUser]));
+        }
+    </script>
+</body>
+</html>
